@@ -1,12 +1,12 @@
 <h2 align="center" style="font-size: 27px">
-    Laravel Supernova
+    Laravel Repository
 </h2>
 
 <p align="center">
-    <img width="470" src="https://i.pinimg.com/originals/bd/6d/5c/bd6d5c4be48278fb961771115057b17a.jpg" alt="Supernova image" />
+    <img width="470" src="https://borzoyi.ir//static/github/laravel-repository/repository-design-pattern-in-laravel.webp" alt="Supernova image" />
 </p>
 
-<h3 align="center">Give a professional and powerful management panel as your Laravel App gift. :gift:</h3>
+<h3 align="center">Use Repository Pattern in Laravel app</h3>
 
 -----------------------
 
