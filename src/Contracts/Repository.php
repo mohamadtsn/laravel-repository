@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 abstract class Repository
 {
 
-    abstract protected function init(): Builder;
-    abstract protected function instanceModel(): Model;
-    abstract protected function modelName(): string;
+    abstract public function init(): Builder;
+    abstract public function instanceModel(): Model;
+    abstract public function modelName(): string;
 
 }
