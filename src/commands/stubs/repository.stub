@@ -1,0 +1,25 @@
+<?php
+
+namespace {{ namespace }};
+
+use Illuminate\Database\Eloquent\Builder;
+use {{ namespacedModel }};
+
+class {{ class }} extends Repository
+{
+
+    protected function init(): Builder
+    {
+        return {{ model }}::query();
+    }
+
+    protected function instanceModel(): {{ model }}
+    {
+        return new {{ model }}();
+    }
+
+    protected function modelName(): string
+    {
+        return "{{ model }}";
+    }
+}

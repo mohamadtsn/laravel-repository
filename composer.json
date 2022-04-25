@@ -1,0 +1,30 @@
+{
+    "name": "mohamadtsn/laravel-repository",
+    "description": "it's a basic Management panel for laravel application",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["laravel", "laravel-repository", "laravel-package", "PHP"],
+    "homepage": "https://github.com/mohamadtsn/laravel-repository",
+    "authors": [
+        {
+            "name": "Mohamad Borzoyi",
+            "email": "mohamad.borzoyi@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0|^8.1"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Mohamadtsn\\Repository\\": "src/"
+        }
+    } ,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "RepositoryServiceProvider"
+            ]
+        }
+    }
+}
