@@ -3,6 +3,7 @@
 namespace {{ namespace }};
 
 use Illuminate\Database\Eloquent\Builder;
+use Mohamadtsn\Repository\Contracts\Repository;
 use {{ namespacedModel }};
 
 class {{ class }} extends Repository

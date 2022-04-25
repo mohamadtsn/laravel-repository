@@ -30,6 +30,17 @@ class RepositoryMakeCommand extends GeneratorCommand
      */
     protected $type = 'Repository';
 
+    public function handle()
+    {
+        if (!$this->option('model')) {
+            $this->error('The "model" param is required.');
+            $this->warn('example: --model=User');
+
+            return false;
+        }
+        return parent::handle();
+    }
+
     /**
      * @param $name
      * @return string
@@ -47,7 +58,7 @@ class RepositoryMakeCommand extends GeneratorCommand
      */
     protected function getStub(): string
     {
-        return str_replace(['/', '\\'], '', __DIR__) . '/stubs/repository.stub';
+        return str_replace(['/', '\\'], DIRECTORY_SEPARATOR, rtrim(__DIR__, '/') . '/stubs/repository.stub');
     }
 
     protected function replaceModel(&$stub)
