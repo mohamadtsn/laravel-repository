@@ -1,6 +1,6 @@
 <?php
 
-namespace Mohamadtsn\Repository\contracts;
+namespace Mohamadtsn\Repository\Contracts;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;

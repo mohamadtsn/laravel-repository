@@ -4,7 +4,7 @@ namespace Mohamadtsn\Repository\Traits;
 
 use Exception;
 use Illuminate\Contracts\Foundation\Application;
-use \Mohamadtsn\Repository\contracts as abstractRepositories;
+use \Mohamadtsn\Repository\Contracts as abstractRepositories;
 use RuntimeException;
 
 trait Repository

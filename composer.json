@@ -1,6 +1,6 @@
 {
     "name": "mohamadtsn/laravel-repository",
-    "description": "it's a basic Management panel for laravel application",
+    "description": "repository class management in laravel apps",
     "type": "library",
     "license": "MIT",
     "keywords": ["laravel", "laravel-repository", "laravel-package", "PHP"],
