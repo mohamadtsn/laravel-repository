@@ -1,6 +1,6 @@
 <?php
 
-namespace Mohamadtsn\Repository\commands;
+namespace Mohamadtsn\Repository\Commands;
 
 use Illuminate\Console\GeneratorCommand;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
