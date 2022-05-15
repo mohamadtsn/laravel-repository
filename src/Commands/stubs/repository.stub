@@ -8,18 +8,17 @@ use {{ namespacedModel }};
 
 class {{ class }} extends Repository
 {
-
-    protected function init(): Builder
+    public function init(): Builder
     {
         return {{ model }}::query();
     }
 
-    protected function instanceModel(): {{ model }}
+    public function instanceModel(): {{ model }}
     {
         return new {{ model }}();
     }
 
-    protected function modelName(): string
+    public static function modelName(): string
     {
         return "{{ model }}";
     }

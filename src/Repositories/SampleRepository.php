@@ -8,19 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class SampleRepository extends Repository
 {
 
-    protected function init(): Builder
+    public function init(): Builder
     {
         // Sample
         // return User::query();
     }
 
-    protected function instanceModel(): Model
+    public function instanceModel(): Model
     {
         // Sample
         // return new User();
     }
 
-    protected function modelName(): string
+    public static function modelName(): string
     {
         // Sample
         return 'User';

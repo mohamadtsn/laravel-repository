@@ -10,6 +10,6 @@ abstract class Repository
 
     abstract public function init(): Builder;
     abstract public function instanceModel(): Model;
-    abstract public function modelName(): string;
+    abstract public static function modelName(): string;
 
 }
