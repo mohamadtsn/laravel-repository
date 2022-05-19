@@ -4,7 +4,7 @@ namespace Mohamadtsn\Repository\Traits;
 
 use Exception;
 use Illuminate\Contracts\Foundation\Application;
-use \Mohamadtsn\Repository\Contracts as abstractRepositories;
+use \Mohamadtsn\Repository\Contracts\Repository as abstractRepositories;
 use RuntimeException;
 
 trait Repository
@@ -36,7 +36,10 @@ trait Repository
             }
             return;
         }
-        $this->repositoryName = method_exists($this->classUser, 'getName') ? (call_user_func([$this->classUser, 'getName']) . 'Repository' ) : '';
+
+        $this->repositoryName = method_exists($this->classUser, 'getName') ?
+            (call_user_func([$this->classUser, 'getName']) . 'Repository') : null;
+
         if (empty($this->repositoryName)) {
             throw new RuntimeException('Not Used "RepositoryProvisions" this Controller Or Not Exist desired controller.');
         }
@@ -60,7 +63,7 @@ trait Repository
 
 
     /**
-     * @param null $name
+     * @param string|null $name
      * @return Application|mixed
      * @throws Exception
      */
@@ -74,7 +77,7 @@ trait Repository
 
     /**
      * @param string|null $name
-     * @return Application|mixed|abstractRepositories
+     * @return Application|abstractRepositories
      * @throws Exception
      */
     public function repository(string $name = null)
