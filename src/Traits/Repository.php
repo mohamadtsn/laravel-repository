@@ -10,7 +10,7 @@ use RuntimeException;
 trait Repository
 {
     private string $classUser;
-    private string $repositoryName;
+    private string|null $repositoryName;
 
     /**
      * @return void
@@ -67,7 +67,7 @@ trait Repository
      * @return Application|mixed
      * @throws Exception
      */
-    private function resolve($name = null)
+    private function resolve(string|null $name = null): mixed
     {
         $this->setOriginClass();
         $this->setRepositoryName($name ?? null);
@@ -80,7 +80,7 @@ trait Repository
      * @return Application|abstractRepositories
      * @throws Exception
      */
-    public function repository(string $name = null)
+    public function repository(string $name = null): abstractRepositories|Application
     {
         return $this->resolve($name);
     }
