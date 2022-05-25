@@ -18,7 +18,8 @@ class RepositoryServiceProvider extends ServiceProvider
         ], 'repository-config');
     }
 
-    protected function registerCommands() {
+    protected function registerCommands(): void
+    {
         $this->commands([
             Commands\RepositoryMakeCommand::class,
         ]);

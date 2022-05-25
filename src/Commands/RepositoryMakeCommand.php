@@ -14,7 +14,7 @@ class RepositoryMakeCommand extends GeneratorCommand
      *
      * @var string
      */
-    protected $signature = 'make:repository {name} {--M|model=}';
+    protected $signature = 'make:repository {name} {--model=}';
 
     /**
      * The console command description.
