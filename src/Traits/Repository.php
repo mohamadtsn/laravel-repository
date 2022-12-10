@@ -38,7 +38,7 @@ trait Repository
         }
 
         $this->repositoryName = method_exists($this->classUser, 'getName') ?
-            (call_user_func([$this->classUser, 'getName']) . 'Repository') : null;
+            ('App\\Repositories\\'. call_user_func([$this->classUser, 'getName']) . 'Repository') : null;
 
         if (empty($this->repositoryName)) {
             throw new RuntimeException('Not Used "RepositoryProvisions" this Controller Or Not Exist desired controller.');
