@@ -30,7 +30,7 @@ trait Repository
     private function setRepositoryName(string $name = null): void
     {
         if (!empty($name)) {
-            $this->repositoryName = $name . 'Repository';
+            $this->repositoryName = 'App\\Repositories\\'. $name . 'Repository';
             if (!app()->bound($this->repositoryName)) {
                 throw new RuntimeException('Not bound class in Service Container.');
             }
