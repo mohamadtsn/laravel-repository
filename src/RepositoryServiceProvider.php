@@ -35,7 +35,6 @@ class RepositoryServiceProvider extends ServiceProvider
         $repositories = collect();
         if (File::isDirectory($repository_path)) {
             $repositories = collect(File::files($repository_path))
-                ->skip(2)
                 ->map(fn(SplFileInfo $repository) => ('App\\Repositories\\' . str($repository->getBasename())->remove('.php')));
         }
 
