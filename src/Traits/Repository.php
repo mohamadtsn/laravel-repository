@@ -30,7 +30,7 @@ trait Repository
     private function setRepositoryName(string $name = null): void
     {
         if (!empty($name)) {
-            $this->repositoryName = $name . 'Repository';
+            $this->repositoryName = 'App\\Repositories\\'. $name . 'Repository';
             if (!app()->bound($this->repositoryName)) {
                 throw new RuntimeException('Not bound class in Service Container.');
             }
@@ -38,7 +38,7 @@ trait Repository
         }
 
         $this->repositoryName = method_exists($this->classUser, 'getName') ?
-            (call_user_func([$this->classUser, 'getName']) . 'Repository') : '';
+            ('App\\Repositories\\'. call_user_func([$this->classUser, 'getName']) . 'Repository') : null;
 
         if (empty($this->repositoryName)) {
             throw new RuntimeException('Not Used "RepositoryProvisions" this Controller Or Not Exist desired controller.');
