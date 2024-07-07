@@ -5,7 +5,6 @@ namespace Mohamadtsn\Repository;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Collection;
-use SplFileInfo;
 
 class RepositoryServiceProvider extends ServiceProvider
 {
@@ -24,7 +23,7 @@ class RepositoryServiceProvider extends ServiceProvider
     {
         $this->getAllClassRepositories()->each(function ($repository) {
             if (!$this->app->bound($repository)) {
-                $this->app->singleton($repository, fn() => new $repository);
+                $this->app->singleton($repository, fn() => $this->app->make($repository));
             }
         });
     }
@@ -35,7 +34,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $repositories = collect();
         if (File::isDirectory($repository_path)) {
             $repositories = collect(File::files($repository_path))
-                ->map(fn(SplFileInfo $repository) => ('App\\Repositories\\' . str($repository->getBasename())->remove('.php')));
+                ->map(fn(\SplFileInfo $repository) => ('App\\Repositories\\' . str($repository->getBasename())->remove('.php')));
         }
 
         return $repositories;
