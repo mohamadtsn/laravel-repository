@@ -8,14 +8,12 @@ use Illuminate\Support\Collection;
 
 class RepositoryServiceProvider extends ServiceProvider
 {
-
     public function boot()
     {
         $this->registerCommands();
 
         $this->publishes([
             __DIR__ . '/Repositories' => base_path('app/Repositories/'),
-
         ], 'repository-config');
     }
 
@@ -23,7 +21,7 @@ class RepositoryServiceProvider extends ServiceProvider
     {
         $this->getAllClassRepositories()->each(function ($repository) {
             if (!$this->app->bound($repository)) {
-                $this->app->singleton($repository, fn() => $this->app->make($repository));
+                $this->app->singleton($repository);
             }
         });
     }
