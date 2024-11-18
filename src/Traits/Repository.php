@@ -19,7 +19,7 @@ trait Repository
      * @return mixed
      * @throws RuntimeException
      */
-    public function __call(string $name, array $arguments)
+    public function __call($name, $arguments)
     {
         return $this->resolve()->$name(...$arguments);
     }
